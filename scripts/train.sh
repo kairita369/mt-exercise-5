@@ -16,7 +16,7 @@ SECONDS=0
 
 logs=$base/logs
 
-model_name=word_level_model
+model_name=word_level_model.yaml
 
 mkdir -p $logs
 
