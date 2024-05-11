@@ -16,11 +16,15 @@ SECONDS=0
 
 logs=$base/logs
 
-model_name=?
+model_name=word_level_model
 
 mkdir -p $logs
 
 mkdir -p $logs/$model_name
+
+echo $configs/$model_name.yaml
+echo $logs/$model_name/out
+echo $logs/$model_name/err
 
 OMP_NUM_THREADS=$num_threads python -m joeynmt train $configs/$model_name.yaml > $logs/$model_name/out 2> $logs/$model_name/err
 
