@@ -73,3 +73,16 @@ Here are the BLEU scores for each configuration. In (c), I tried vocaublary_size
 
 
         bash ./scripts/evaluate.sh
+
+# Part 2
+## Changes
+1. I edited the scripts/evaluate.sh to take beam_size as input (default value is 5 to ensure compatibility with the Part1), open and change the beam size in the config file using "sed" command and regex, and then run translations using the changed config file and evaluate them. Running example:
+
+
+        bash ./scripts/evaluate.sh 9      # where 9 is the beam size to try
+
+
+2. I created a new script scripts/plot_bleu_beam_sizes.py that plots a line plot. Running:
+
+
+        python ./scripts/plot_bleu_beam_sizes.py
