@@ -38,3 +38,38 @@ The training process can be interrupted at any time, and the best checkpoint wil
 Evaluate a trained model with
 
     ./scripts/evaluate.sh
+
+# Part 1
+## Results
+
+Here are the BLEU scores for each configuration. In (c), I tried vocaublary_size=4000. You can find the analysis of translation qualities in the pdf report.
+
+| Configuration | Use BPE | Vocabulary Size | BLEU   |
+|---------------|---------|-----------------|--------|
+| (a)           | No      | 2000            | 11.7   |
+| (b)           | Yes     | 2000            | 18.7   |
+| (c)           | Yes     | 4000            | 19.5   |
+
+## Changes
+1. I chose the translation dircetion en to it. I created a new folder data2 manually, then created a script called scripts/truncate_data.sh to copy the files train.en-it.en, train.en-it.it, test.en-it.en, test.en-it.it, dev.en-it.en and dev.en-it.it into data2 folder, also truncating them to include the only first 10000 lines. Then I manually renamed the files to remove the "en-it" part.
+
+
+        bash scripts/truncate_data.sh train.en-it.en train.en-it.it 100000       # 10000 is first 10000 lines to take in the files
+   
+
+3. Multiple config files: I created a separate config file per experiment: configs/word_level_model_moses.yaml, configs/bpe_model_2000.yaml and configs/bpe_model_4000.yaml. I set the flags in the configs files as told in the assignment sheet, for example for the bpe models, I comment out voc_limit: 2000 and use voc_file : "data2/bpe_vocab2000.it". But for the word_level_model I use voc_limit: 2000.
+
+
+        bash ./scripts/train.sh
+
+
+4. Running BPE to get joint vocab and code files: I created a script (scripts/run_bpe.sh) that runs learn-bpe from subword-nmt library on both train files, and then runs apply-bpe on the two train files. It creates these files: data2/code20000.bpe, bpe_vocab2000.en and bpe_vocab2000.it. Running example:
+
+
+         bash scripts/run_bpe.sh 4000   # 4000 vocabulary size
+
+
+5. After running the training on the three models on google colab GPUs (changed the same things as in Assignment 4 for running on GPU), I use the scripts/evaluate.sh to get the BLEU scores.
+
+
+        bash ./scripts/evaluate.sh
