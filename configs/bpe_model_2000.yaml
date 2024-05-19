@@ -18,7 +18,7 @@ data:
         voc_file : "data2/bpe_vocab2000.en"
         tokenizer_type: "subword-nmt"
         tokenizer_cfg:
-            pretokenizer: "none"
+            pretokenizer: "moses"
             num_merges: 2000
             codes: "data2/code2000.bpe"
     trg: 
@@ -32,7 +32,7 @@ data:
         voc_file : "data2/bpe_vocab2000.it"
         tokenizer_type: "subword-nmt"
         tokenizer_cfg:
-            pretokenizer: "none"
+            pretokenizer: "moses"
             num_merges: 2000
             codes: "data2/code2000.bpe"
 
@@ -58,10 +58,10 @@ training:
     validation_freq: 500
     logging_freq: 100
     eval_metric: "bleu"
-    model_dir: "word_level_model"
+    model_dir: "models/bpe_model_2000"
     overwrite: True
     shuffle: True
-    use_cuda: False
+    use_cuda: True
     max_output_length: 100
     print_valid_sents: [0, 1, 2, 3, 4]
     label_smoothing: 0.3

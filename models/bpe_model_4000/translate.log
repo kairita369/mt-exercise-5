@@ -1,0 +1,18 @@
+2024-05-19 14:01:28,236 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2024-05-19 14:01:28,407 - INFO - joeynmt.model - Building an encoder-decoder model...
+2024-05-19 14:01:28,512 - INFO - joeynmt.model - Enc-dec model built.
+2024-05-19 14:01:29,791 - INFO - joeynmt.helpers - Load model from /content/drive/MyDrive/mt5/mt-exercise-5/models/bpe_model_4000/39000.ckpt.
+2024-05-19 14:01:30,206 - INFO - joeynmt.tokenizers - en tokenizer: SubwordNMTTokenizer(level=bpe, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses, tokenizer=BPE, separator=@@, dropout=0.0)
+2024-05-19 14:01:30,206 - INFO - joeynmt.tokenizers - it tokenizer: SubwordNMTTokenizer(level=bpe, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses, tokenizer=BPE, separator=@@, dropout=0.0)
+2024-05-19 14:01:30,433 - WARNING - joeynmt.helpers - `alpha` option is obsolete. Please use `beam_alpha`, instead.
+2024-05-19 14:01:30,433 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2024-05-19 14:01:57,823 - INFO - joeynmt.prediction - Generation took 27.3032[sec]. (No references given)
+2024-05-19 17:37:10,962 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2024-05-19 17:37:11,073 - INFO - joeynmt.model - Building an encoder-decoder model...
+2024-05-19 17:37:11,211 - INFO - joeynmt.model - Enc-dec model built.
+2024-05-19 17:37:11,367 - INFO - joeynmt.helpers - Load model from /mnt/c/Users/Rita G/Desktop/ex05/mt-exercise-5/models/bpe_model_4000/39000.ckpt.
+2024-05-19 17:37:12,719 - INFO - joeynmt.tokenizers - en tokenizer: SubwordNMTTokenizer(level=bpe, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses, tokenizer=BPE, separator=@@, dropout=0.0)
+2024-05-19 17:37:12,720 - INFO - joeynmt.tokenizers - it tokenizer: SubwordNMTTokenizer(level=bpe, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses, tokenizer=BPE, separator=@@, dropout=0.0)
+2024-05-19 17:37:12,924 - WARNING - joeynmt.helpers - `alpha` option is obsolete. Please use `beam_alpha`, instead.
+2024-05-19 17:37:12,924 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2024-05-19 17:43:12,885 - INFO - joeynmt.prediction - Generation took 359.8067[sec]. (No references given)
