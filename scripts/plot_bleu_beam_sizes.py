@@ -21,9 +21,6 @@ plt.ylabel('BLEU Scores')
 plt.title('BLEU Scores per Beam Size')
 plt.xticks(list(data.keys()))
 
-plt.xlabel('Values')
-plt.ylabel('Keys')
-plt.title('Line Plot with Keys Positioned by Values')
 
 plt.savefig('line_plot.png')
 plt.show()
