@@ -3,15 +3,15 @@
 scripts=$(dirname "$0")
 base=$scripts/..
 
-data=$base/sampled_data
+data=$base/data2
 configs=$base/configs
 
 translations=$base/translations
 
 mkdir -p $translations
 
-src=?
-trg=?
+src=en
+trg=it
 
 
 num_threads=4
@@ -21,7 +21,7 @@ device=0
 
 SECONDS=0
 
-model_name=?
+model_name=bpe_model_4000
 
 echo "###############################################################################"
 echo "model_name $model_name"
